@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: fastobo
-  version: "0.14.1"
+  version: "0.14.2"
 
 package:
   name: ${{ name | lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: a230d780581332d041db29299f6c1b960b0228285d8de9981364540c14d069bc
+  sha256: 1696a10552fda7bc7fae2100396d0ff55f2cbe293109247d1053d062fb0badf7
 
 build:
-  number: 2
+  number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . -vv
